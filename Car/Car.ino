@@ -62,7 +62,7 @@ void setup() {
     count++;
   }
   delay(2000);  //acceptable since it is in the setup function.
-  if (status != WL_CONNECTED) { //if we connected then print our IP, Mac, and SSID we're on
+  if (status == WL_CONNECTED) { //if we connected then print our IP, Mac, and SSID we're on
     Serial.println("CONNECTED!");
     delay(500);
   } else { //if we failed to connect just Try again.
