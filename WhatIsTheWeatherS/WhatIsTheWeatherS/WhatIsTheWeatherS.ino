@@ -19,8 +19,7 @@ char output[1000];
 //Options Type: 0=temp 1=time 2=date 3=visibility 4=humidity 5=pressure
 int option_type;
 #define TEMP 0
-#define TIME 1
-#define DATE 2
+
 #define VISIBILITY 3
 #define HUMIDITY 4
 #define PRESSURE 5
@@ -28,6 +27,7 @@ int option_type;
 //Button pin and val
 const uint8_t button_pin = 7;
 uint8_t val;
+
 
 //Button states
 uint8_t state;
@@ -67,7 +67,7 @@ void setup() {
     count++;
   }
   delay(2000);  //acceptable since it is in the setup function.
-  if (status != WL_CONNECTED) {
+  if (status == WL_CONNECTED) {
     Serial.println("CONNECTED!");
     delay(500);
   } else { //if we failed to connect just Try again.
